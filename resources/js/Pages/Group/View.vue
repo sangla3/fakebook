@@ -235,7 +235,7 @@ function updateGroup() {
                 </div>
                 <div class="flex">
                     <!-- Thumbnail Image -->
-                    <div class="flex items-center justify-center relative group/thumbnail ml-[48px] w-[128px] h-128px -mt-[64px] rounded-full">
+                    <div class="flex items-center justify-center relative group/thumbnail ml-[48px] w-[128px] h-[128px] -mt-[64px] rounded-full">
                         <img :src="thumbnailImageSrc || group.thumbnail_url || '/img/default-group.png'" class="w-full h-full object-cover rounded-full">
                         <button
                             v-if="isCurrentUserAdmin && !thumbnailImageSrc"
