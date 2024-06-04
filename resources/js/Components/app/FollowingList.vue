@@ -22,7 +22,7 @@ defineProps({
                     </div>
                 </DisclosureButton>
                 <DisclosurePanel>
-                    <FollowingListItems :users="users"/>
+                    <FollowingListItems :users="users" :allUser="allUser"/>
                 </DisclosurePanel>
             </Disclosure>
         </div>
