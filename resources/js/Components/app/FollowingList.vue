@@ -3,7 +3,8 @@ import FollowingListItems from "@/Components/app/FollowingListItems.vue";
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 
 defineProps({
-    users: Array
+    users: Array,
+    allUser: Array
 });
 </script>
 
@@ -28,7 +29,7 @@ defineProps({
         <!-- Pc -->
         <div class="h-full overflow-hidden flex flex-col lg:flex">
             <h2 class="text-xl font-bold">Đang theo dõi</h2>
-            <FollowingListItems :users="users"/>
+            <FollowingListItems :users="users" :allUser="allUser"/>
         </div>
     </div>
 </template>

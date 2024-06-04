@@ -89,6 +89,9 @@ const submit = () => {
                     Log in
                 </PrimaryButton>
             </div>
+            <div class="flex items-center justify-center mt-4">
+                <Link class="text-blue-500" :href="route('register')">Register</Link>
+            </div>
         </form>
     </GuestLayout>
 </template>

@@ -10,7 +10,8 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 defineProps({
     posts: Object,
     groups: Array,
-    followings: Array
+    followings: Array,
+    allUser: Array
 });
 </script>
 
@@ -18,14 +19,13 @@ defineProps({
     <Head>
         <link rel="icon" type="image/png" href="/img/logo.png">
     </Head>
-    
     <AuthenticatedLayout>
         <div class="grid lg:grid-cols-12 gap-3 p-4 h-full">
             <div class="lg:col-span-3 lg:order-1 h-full overflow-hidden">
                 <GroupList :groups="groups"/>
             </div>
             <div class="lg:col-span-2 lg:order-3 h-full overflow-hidden">
-                <FollowingList :users="followings"/>
+                <FollowingList :users="followings" :allUser="allUser"/>
             </div>
             <div class="lg:col-span-7 lg:order-2 h-full overflow-hidden flex flex-col">
                 <CreatePost />

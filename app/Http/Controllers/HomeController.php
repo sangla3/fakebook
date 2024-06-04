@@ -8,6 +8,7 @@ use App\Http\Resources\PostResource;
 use App\Http\Resources\UserResource;
 use App\Models\Group;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,7 @@ class HomeController extends Controller
     {   
         $userId = Auth::id();
         $user = $request->user();
+        $allUser = User::where('id', '!=', Auth::id())->get();
         $posts = Post::postsForTimeline($userId)
             ->select('posts.*')
             ->leftJoin('followers AS f', function ($join) use ($userId) {
@@ -52,6 +54,7 @@ class HomeController extends Controller
             
         return Inertia::render('Home', [
             'posts' => $post,
+            'allUser' => UserResource::collection($allUser),
             'groups' => GroupResource::collection($groups),
             'followings' => UserResource::collection($user->followings)
         ]);
